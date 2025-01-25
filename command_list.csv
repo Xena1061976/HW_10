@@ -1,1 +1,29 @@
-tory
+cd TASK
+history -c && rm ~/.bash_history
+git config --global user.name "Oksana Vyborova"
+git config --global user.email "xena1061976@gmail.com"
+git clone https://github.com/Xena1061976/HW_10
+cd TASK
+touch text_ignore.txt
+echo "text_ignore.txt" >> .gitignore
+git status
+git add .
+git commit -m "Додано text_ignore.txt до .gitignore"
+touch main_test.txt
+git add .
+git commit -m "Додано main_test.txt"
+git checkout -b develop
+touch develop_test.txt
+git add .
+git commit -m "Додано develop_test.txt"
+echo "just a small change" >> develop_test.txt
+git status
+git add .
+git commit -m "Зміни у develop_test.txt"
+git checkout main
+git merge develop
+git log
+history > command_list.csv
+git add .
+git commit -m "Додано command_list.csv"
+git push
